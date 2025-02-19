@@ -41,3 +41,25 @@ npm i --save-dev sass
 Ibicializar um novo repositório GIT.
 ````
 git init
+````
+Adicionar todos os arquivos modificados no sta
+````
+git add .
+````
+git commit -m "Base do projeto"
+````
+commit representa um conjunto de alterações
+````
+Verificar a branch
+````
+git branch
+````
+Renomear a branch atual no GIT para main
+````
+git branch -M main
+````
+Adicionar um repositorio remoto ao repositorio local
+````
+git remote add origin https://github.com/WindenbergMelo/Assistente-en.git
+````
+git push -u origin main
