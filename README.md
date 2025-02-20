@@ -36,6 +36,7 @@ Instalar o sass.
 ````
 npm i --save-dev sass
 ````
+Necessário adicionar os arquivos css, sass e js no arquivo vite
 ## Como utilizar o GITHUB
 
 Ibicializar um novo repositório GIT.

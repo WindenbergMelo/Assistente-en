@@ -1,14 +1,13 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [LoginController::class, 'index'])->name('login');
 
 //Usuarios
-// como é chamado nos arquivos: index-user, nome da função: index e nome do arquivo
 Route::get('/index-user', [UserController::class, 'index'])->name('user.index');
 Route::get('/show-cards/{deck}', [UserController::class, 'show'])->name('show.cards');
 Route::get('/create-deck', [UserController::class, 'create'])->name('create.deck');
