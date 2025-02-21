@@ -24,6 +24,11 @@ Instalar as dependências do Node.js
 ````
 npm install
 ````
+Executar as migrations para criar a base de dados e as tabelas.
+````
+php artisan migrate
+````
+
 Executaras bibliotecas do Node.js
 ````
 npm run dev
@@ -37,6 +42,28 @@ Instalar o sass.
 npm i --save-dev sass
 ````
 Necessário adicionar os arquivos css, sass e js no arquivo vite
+````
+Execultar as seed para cadastrar registros de teste. 
+````
+php artisan db:seed
+
+## Como rodar o projeto baixado
+
+Duplicar o arquivo ".env.example" e renomear para ".env".<br>
+
+Instalar as dependências do PHP.
+````
+composer install
+````
+Gerar a chave (caso venha sem, está localizada no arquivo ".env")
+````
+php artisan key:generate
+````
+Instalar as depedencias do Node.js
+````
+npm install
+````
+
 ## Como utilizar o GITHUB
 
 Ibicializar um novo repositório GIT.
