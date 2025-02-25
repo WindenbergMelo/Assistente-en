@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'loginProcess'])->name('login.process');
 
 //Usuarios
 Route::get('/index-user', [UserController::class, 'index'])->name('user.index');

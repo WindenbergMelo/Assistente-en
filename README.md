@@ -28,7 +28,6 @@ Executar as migrations para criar a base de dados e as tabelas.
 ````
 php artisan migrate
 ````
-
 Executaras bibliotecas do Node.js
 ````
 npm run dev
@@ -46,6 +45,10 @@ Necessário adicionar os arquivos css, sass e js no arquivo vite
 Execultar as seed para cadastrar registros de teste. 
 ````
 php artisan db:seed
+````
+Criar a Request "local onde será feita a validação dos dados do login e do cadastro". Obs.: mudar de 'false' para 'true' na função authorized
+````
+php artisan make:request "nome da request"
 
 ## Como rodar o projeto baixado
 

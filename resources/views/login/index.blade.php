@@ -9,22 +9,44 @@
 <body class="d-flex align-items-center justify-content-center vh-100">
     <div class="card p-4 shadow" style="width: 24rem">
         <main class="form-signin">
-            <form action="{{route('user.index')}}">
-            <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-            <h1 class="h3 mb-3 fw-normal">Area Restrita</h1>
+            <form action="{{route('login.process')}}" method="POST">
+                {{-- O "@csrf" é para garantir que não receba requisições de fora do site --}}
+                @csrf
+                <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+                <h1 class="h3 mb-3 fw-normal">Area Restrita</h1>
+
+                @if ($errors->any())
+                
+                <div class="alert alert-danger" role="alert">
+                    @foreach ($errors->all() as $error)
+
+                        {{ $error }}<br>
+                        
+                    @endforeach
+                </div>
+                
+                @endif
+
+                    @if (session('error'))
+                        <div class="alert alert-danger" role="alert">
         
-            <div class="form-floating mb-3">
-                <input type="email" name="email"class="form-control" id="email" placeholder="name@example.com">
-                <label for="email">E-mail</label>
-            </div>
-            <div class="form-floating">
-                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
-                <label for="password">Senha</label>
-            </div>
-        
-            <button class="btn btn-primary w-100 py-2 mt-3" type="submit">Entrar</button>
-            <p class="mt-3 mb-3 text-body-secondary text-center">Esqueceu a Senha?</p>
-            <p class="mt-3 mb-3 text-body-secondary text-center ">Cadastre-se <a href="#" class="text-decoration-none">Aqui</a></p>
+                                {{ session('error') }}
+                                
+                        </div>
+                    @endif
+            
+                <div class="form-floating mb-3">
+                    <input type="email" name="email"class="form-control" id="email" placeholder="name@example.com" value="{{old('email')}}">
+                    <label for="email">E-mail</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+                    <label for="password">Senha</label>
+                </div>
+            
+                <button class="btn btn-primary w-100 py-2 mt-3" type="submit">Entrar</button>
+                <p class="mt-3 mb-3 text-body-secondary text-center">Esqueceu a Senha?</p>
+                <p class="mt-3 mb-3 text-body-secondary text-center ">Cadastre-se <a href="#" class="text-decoration-none">Aqui</a></p>
             </form>
         </main>
     </div>
