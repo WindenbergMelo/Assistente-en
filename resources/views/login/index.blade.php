@@ -15,26 +15,8 @@
                 <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
                 <h1 class="h3 mb-3 fw-normal">Area Restrita</h1>
 
-                @if ($errors->any())
-                
-                <div class="alert alert-danger" role="alert">
-                    @foreach ($errors->all() as $error)
+                <x-alert/>
 
-                        {{ $error }}<br>
-                        
-                    @endforeach
-                </div>
-                
-                @endif
-
-                    @if (session('error'))
-                        <div class="alert alert-danger" role="alert">
-        
-                                {{ session('error') }}
-                                
-                        </div>
-                    @endif
-            
                 <div class="form-floating mb-3">
                     <input type="email" name="email"class="form-control" id="email" placeholder="name@example.com" value="{{old('email')}}">
                     <label for="email">E-mail</label>

@@ -14,7 +14,7 @@
                 <ul class="nav nav-pills">
                 <li class="nav-item"><a href="{{route('user.index')}}" class="nav-link">Dashbord</a></li>
                 <li class="nav-item"><a href="{{route('user.index')}}" class="nav-link">Decks</a></li>
-                <li class="nav-item"><a href="{{route('login')}}" class="nav-link">Sair</a></li>
+                <li class="nav-item"><a href="{{route('login.destroy')}}" class="nav-link">Sair</a></li>
                 </ul>
             </div>
         </div>

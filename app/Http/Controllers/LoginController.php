@@ -25,5 +25,13 @@ class LoginController extends Controller
             return back()->withInput()->with('error', 'E-mail ou senha inválido');
         }
 
+        return redirect()->route('user.index');
+
+    }
+
+    public function destroy(){
+        Auth::logout();
+
+        return redirect()->route('login')->with('success', 'Deslogado com sucesso!');
     }
 }
